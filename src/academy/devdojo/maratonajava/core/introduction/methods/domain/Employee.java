@@ -1,15 +1,16 @@
 package devdojo.maratonajava.core.introduction.methods.domain;
 
 public class Employee {
-    public String name = null;
-    public int age = 0;
-    public double[] salaries = null;
+    private String name;
+    private int age;
+    private double[] salaries;
+    private double average;
 
     public void printer() {
-        System.out.println("Nome: " + this.name);
-        System.out.println("Idade: " + this.age);
+        System.out.println("Nome: " + name);
+        System.out.println("Idade: " + age);
 
-        if (this.salaries == null) {
+        if (salaries == null) {
             return;
         }
 
@@ -21,13 +22,39 @@ public class Employee {
     }
 
     private void printerAverageSalaries() {
-        double average = 0;
-
-        for (double salary : this.salaries) {
+        for (double salary : salaries) {
             average += salary;
         }
 
-        average /= this.salaries.length;
+        average /= salaries.length;
         System.out.printf("Média dos salários: %.2f%n", average);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public double[] getSalaries() {
+        return salaries;
+    }
+
+    public void setSalaries(double[] salaries) {
+        this.salaries = salaries;
+    }
+
+    public double getAverage() {
+        return average;
     }
 }

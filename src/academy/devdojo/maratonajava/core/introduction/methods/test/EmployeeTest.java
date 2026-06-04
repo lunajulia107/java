@@ -6,9 +6,9 @@ public class EmployeeTest {
     static void main() {
         Employee employee = new Employee();
 
-        employee.name = "Julia";
-        employee.age = 21;
-        employee.salaries = new double[]{4500, 2000, 3000};
+        employee.setName("Julia");
+        employee.setAge(21);
+        employee.setSalaries(new double[]{4500, 2000, 3000});
 
         employee.printer();
     }
