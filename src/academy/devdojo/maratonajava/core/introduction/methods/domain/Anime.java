@@ -6,6 +6,7 @@ public class Anime {
     private int episodes;
     private String gender;
 
+    // Modificadores de acesso: public, private
     public void init(String name, String type, int episodes) {
         this.name = name;
         this.type = type;
