@@ -1,0 +1,33 @@
+package devdojo.maratonajava.core.intermediary.dates.test;
+
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.temporal.ChronoField;
+import java.time.temporal.TemporalAdjusters;
+
+public class TemporalAdjustersTest {
+    static void main() {
+        LocalDate now = LocalDate.now();
+        now = now.with(ChronoField.DAY_OF_MONTH, 25);
+
+        System.out.println(now);
+        System.out.println(now.getDayOfWeek());
+
+        now = LocalDate.now().with(TemporalAdjusters.next(DayOfWeek.FRIDAY));
+
+        System.out.println(now);
+        System.out.println(now.getDayOfWeek());
+
+        now = LocalDate.now().with(TemporalAdjusters.previous(DayOfWeek.FRIDAY));
+        System.out.println(now);
+        System.out.println(now.getDayOfWeek());
+
+        now = LocalDate.now().with(TemporalAdjusters.firstDayOfMonth());
+        System.out.println(now);
+        System.out.println(now.getDayOfWeek());
+
+        now = LocalDate.now().with(TemporalAdjusters.lastDayOfMonth());
+        System.out.println(now);
+        System.out.println(now.getDayOfWeek());
+    }
+}
